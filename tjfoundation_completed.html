@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#147a35">
+<meta name="description" content="TJ Foundation works for the rescue, treatment, shelter and protection of all animals. 24x7 animal helpline: 8437178986.">
+<title>TJ Foundation | Care • Rescue • Protect — For All Animals</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================
+   1. TOKENS & RESET
+   ========================================================== */
+:root{
+  --green:#147a35;
+  --green-dark:#0d4f27;
+  --green-deep:#0a3d1e;
+  --green-soft:#eef7ed;
+  --green-mid:#42c76a;
+  --ink:#17221a;
+  --muted:#65716a;
+  --red:#e82931;
+  --line:#e2ebe3;
+  --shadow-sm:0 4px 16px rgba(13,79,39,.07);
+  --shadow-md:0 12px 40px rgba(13,79,39,.13);
+  --shadow-lg:0 24px 70px rgba(0,0,0,.22);
+  --max:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:16px;line-height:1.6;color:var(--ink);background:#fff;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;line-height:1.2;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:999;
+  background:var(--green);color:#fff;padding:12px 20px;border-radius:0 0 10px 0;
+}
+.skip-link:focus{left:0}
+:focus-visible{outline:3px solid var(--green-mid);outline-offset:3px;border-radius:4px}
+
+/* ==========================================================
+   2. BUTTONS / SHARED
+   ========================================================== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:999px;padding:13px 24px;font-size:14px;font-weight:800;
+  border:1px solid transparent;cursor:pointer;letter-spacing:.1px;
+  transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
+}
+.btn-green{
+  background:var(--green);color:#fff;border-color:rgba(255,255,255,.35);
+  box-shadow:0 10px 26px rgba(20,122,53,.38);
+}
+.btn-green:hover{background:#0f6b2c;transform:translateY(-2px)}
+.btn-ghost{
+  background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.42);
+  backdrop-filter:blur(6px);
+}
+.btn-ghost:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--green);box-shadow:0 10px 26px rgba(0,0,0,.16)}
+.btn-white:hover{transform:translateY(-2px);background:#f4fff6}
+.btn-outline{background:transparent;color:var(--green);border-color:#c8e2cd}
+.btn-outline:hover{background:var(--green-soft);transform:translateY(-2px)}
+.btn-block{width:100%}
+
+.eyebrow{
+  font-size:11px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;
+  color:var(--green);margin:0 0 10px;
+}
+.eyebrow.light{color:#a9e8b8}
+
+.section{padding:78px 0}
+.section-head{max-width:680px;margin:0 auto 46px;text-align:center}
+.section-head.left{margin-left:0;text-align:left}
+.section-head h2,
+.about-copy h2,
+.contact-info h2{
+  font-size:clamp(26px,3.4vw,38px);font-weight:800;
+  letter-spacing:-1.1px;margin:0 0 12px;
+}
+.section-head h2 span,
+.about-copy h2 span,
+.contact-info h2 span{color:var(--green)}
+.section-head p{font-size:14.5px;color:var(--muted)}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero-slide{transition:none}
+  .sos-icon{animation:none}
+}
+
+/* ==========================================================
+   3. TOP BAR + HEADER
+   ========================================================== */
+.topbar{background:var(--green-deep);color:#cfe6d5;font-size:12px}
+.topbar-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:8px 0;flex-wrap:wrap;
+}
+.topbar b{color:#fff}
+.topbar a{color:#d7f0dc;transition:color .2s}
+.topbar a:hover{color:#fff}
+
+.header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(14px);
+  border-bottom:1px solid #e8eee8;transition:box-shadow .25s ease;
+}
+.header.scrolled{box-shadow:0 6px 24px rgba(13,79,39,.09)}
+
+.nav{
+  position:relative;min-height:76px;display:flex;
+  align-items:center;justify-content:space-between;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:11px;white-space:nowrap}
+.brand-mark{font-size:32px;line-height:1;color:var(--green);filter:drop-shadow(0 3px 6px rgba(20,122,53,.22))}
+.brand-text b{
+  display:block;font-family:'Manrope',sans-serif;font-size:22px;
+  font-weight:800;letter-spacing:-.7px;line-height:1.15;
+}
+.brand-text small{
+  display:block;font-size:9px;letter-spacing:.3px;color:var(--muted);
+  text-transform:uppercase;font-weight:600;
+}
+
+.nav nav{display:flex;align-items:center;gap:22px}
+.nav nav > a:not(.nav-call){
+  position:relative;font-size:13px;font-weight:700;color:#2b3a2f;
+  padding:6px 0;transition:color .2s;
+}
+.nav nav > a:not(.nav-call)::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
+  background:var(--green);border-radius:2px;
+  transform:scaleX(0);transform-origin:left;transition:transform .25s ease;
+}
+.nav nav > a:not(.nav-call):hover,
+.nav nav > a:not(.nav-call).active{color:var(--green)}
+.nav nav > a:not(.nav-call):hover::after,
+.nav nav > a:not(.nav-call).active::after{transform:scaleX(1)}
+
+.nav-call{
+  background:var(--green);color:#fff;border-radius:10px;
+  padding:11px 16px;font-size:12.5px;font-weight:800;
+  box-shadow:0 6px 18px rgba(20,122,53,.28);
+  transition:background .2s,transform .2s;
+}
+.nav-call:hover{background:#0f6b2c;transform:translateY(-1px)}
+
+.menu-toggle{
+  display:none;border:0;background:var(--green-soft);color:var(--green);
+  padding:8px 13px;border-radius:10px;font-size:20px;line-height:1;cursor:pointer;
+}
+
+/* ==========================================================
+   4. HERO
+   ========================================================== */
+.hero{position:relative;overflow:hidden;color:#fff;isolation:isolate}
+.hero-slides{position:absolute;inset:0;z-index:-2}
+.hero-slide{
+  position:absolute;inset:0;background-size:cover;background-position:center 45%;
+  opacity:0;transition:opacity 1.1s ease;
+}
+.hero-slide.active{opacity:1}
+.hero-overlay{
+  position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(95deg,
+    rgba(8,26,14,.95) 0%,
+    rgba(8,26,14,.84) 38%,
+    rgba(8,26,14,.38) 72%,
+    rgba(8,26,14,.16) 100%);
+}
+.hero-inner{
+  position:relative;display:flex;align-items:center;justify-content:space-between;
+  gap:48px;min-height:600px;padding:70px 0 110px;
+}
+.hero-copy{max-width:620px}
+.hero h1{
+  font-size:clamp(38px,5.2vw,64px);font-weight:800;line-height:1.04;
+  letter-spacing:-1.8px;margin:0 0 12px;
+}
+.hero h1 span{color:#8fe6a1}
+.hero-sub{
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;
+  letter-spacing:.6px;color:#d8f0dc;margin:0 0 14px;
+}
+.hero-text{font-size:14.5px;color:#e8f2ea;max-width:540px;margin:0 0 24px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.hero-note{font-size:12px;color:#cfe2d3;max-width:440px}
+
+/* SOS card */
+.hero-help{
+  position:relative;flex-shrink:0;width:312px;background:#fff8f6;color:var(--ink);
+  border-radius:20px;padding:26px 22px 20px;text-align:center;
+  box-shadow:var(--shadow-lg);
+}
+.close-help{
+  position:absolute;right:10px;top:6px;border:0;background:transparent;
+  font-size:26px;line-height:1;color:#59645d;cursor:pointer;
+  padding:4px 8px;border-radius:8px;transition:background .2s;
+}
+.close-help:hover{background:#f0e6e4}
+.sos-icon{
+  width:68px;height:68px;margin:0 auto 10px;display:grid;place-items:center;
+  border-radius:50%;background:#ffeded;color:#ec1e2b;font-weight:900;
+  font-size:22px;letter-spacing:.5px;border:7px solid #fff0f0;
+  animation:pulseSos 2.4s ease-in-out infinite;
+}
+@keyframes pulseSos{
+  0%,100%{box-shadow:0 0 0 0 rgba(232,41,49,.35)}
+  50%{box-shadow:0 0 0 12px rgba(232,41,49,0)}
+}
+.hero-help h2{font-size:21px;font-weight:800;letter-spacing:-.5px;margin:0 0 6px}
+.hero-help p{font-size:12.5px;line-height:1.5;margin:0 0 14px;color:#4c5750}
+.call-red{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:#ec202b;color:#fff;border-radius:10px;padding:11px 8px;
+  font-size:21px;font-weight:900;letter-spacing:.4px;white-space:nowrap;
+  box-shadow:0 8px 20px rgba(236,32,43,.3);
+  transition:background .2s,transform .2s;
+}
+.call-red:hover{background:#d31722;transform:translateY(-2px)}
+.hero-help small{display:block;margin-top:9px;font-size:11px;color:#6b7570}
+
+/* Slider controls */
+.hero-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:4;
+  width:44px;height:44px;border:0;border-radius:50%;
+  background:rgba(7,21,12,.55);color:#fff;font-size:30px;line-height:1;
+  display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(4px);
+  transition:background .2s;
+}
+.hero-arrow:hover{background:var(--green)}
+.hero-arrow.prev{left:max(12px,calc(50% - 620px))}
+.hero-arrow.next{right:max(12px,calc(50% - 620px))}
+.hero-dots{
+  position:absolute;left:50%;bottom:28px;transform:translateX(-50%);
+  display:flex;gap:9px;z-index:4;
+}
+.hero-dot{
+  width:10px;height:10px;padding:0;cursor:pointer;border-radius:50%;
+  border:1.5px solid #fff;background:transparent;transition:all .25s ease;
+}
+.hero-dot.active{width:28px;border-radius:6px;background:var(--green-mid);border-color:var(--green-mid)}
+
+/* ==========================================================
+   5. SERVICES STRIP
+   ========================================================== */
+.services{background:var(--green-soft);border-bottom:1px solid #e0ece0}
+.service-grid{display:grid;grid-template-columns:repeat(5,1fr);padding:22px 0}
+.service-item{
+  display:flex;align-items:center;gap:12px;padding:4px 16px;
+  border-right:1px solid #d7e5d7;
+}
+.service-item:last-child{border-right:0}
+.service-icon{font-size:25px;line-height:1;color:var(--green)}
+.service-item b{display:block;font-size:13px;font-family:'Manrope',sans-serif;font-weight:800}
+.service-item p{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.4}
+
+/* ==========================================================
+   6. ABOUT
+   ========================================================== */
+.about-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:60px;align-items:center}
+.about-media{position:relative}
+.about-media img{
+  width:100%;height:400px;object-fit:cover;
+  border-radius:26px 26px 90px 26px;box-shadow:var(--shadow-md);
+}
+.sticker{
+  position:absolute;right:-10px;bottom:-10px;background:#fff3c9;
+  border-radius:14px;padding:14px 20px;transform:rotate(4deg);
+  box-shadow:0 10px 30px rgba(0,0,0,.16);font-size:13px;line-height:1.3;font-weight:600;
+}
+.sticker b{display:block;font-size:18px;color:var(--green-dark)}
+.about-copy > p:not(.eyebrow){font-size:14.5px;color:var(--muted);margin-bottom:24px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.value-card{
+  background:#f2f9f1;border:1px solid #e3efe2;border-radius:14px;
+  padding:16px 14px;transition:transform .25s,box-shadow .25s;
+}
+.value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+.value-card .v-icon{font-size:22px;color:var(--green);line-height:1}
+.value-card b{display:block;font-size:13px;margin:8px 0 4px;font-family:'Manrope',sans-serif}
+.value-card p{font-size:11.5px;line-height:1.45;color:var(--muted)}
+
+/* ==========================================================
+   7. OUR WORK
+   ========================================================== */
+.work{background:#fbfdfa}
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work-card{
+  position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);
+  border-radius:18px;padding:28px 24px;
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.work-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--green),var(--green-mid));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s ease;
+}
+.work-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:#cfe4d2}
+.work-card:hover::before{transform:scaleX(1)}
+.work-icon{
+  width:54px;height:54px;border-radius:15px;background:var(--green-soft);
+  color:var(--green);display:grid;place-items:center;font-size:25px;
+  margin-bottom:18px;transition:background .25s,color .25s;
+}
+.work-card:hover .work-icon{background:var(--green);color:#fff}
+.work-card h3{font-size:17px;font-weight:800;margin-bottom:8px;letter-spacing:-.3px}
+.work-card p{font-size:13.5px;color:var(--muted)}
+
+/* ==========================================================
+   8. STATS
+   ========================================================== */
+.stats{
+  background:linear-gradient(120deg,#0d4f27 0%,#147a35 55%,#18843b 100%);
+  color:#fff;padding:58px 0;
+}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;text-align:center}
+.stat b{
+  display:block;font-family:'Manrope',sans-serif;
+  font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-1.6px;line-height:1;
+}
+.stat span{display:block;margin-top:8px;font-size:12.5px;color:#c9e8d2;letter-spacing:.4px}
+
+/* ==========================================================
+   9. ANIMALS
+   ========================================================== */
+.animals{background:linear-gradient(#f4faf2,#eaf5e8)}
+.animal-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;
+}
+.animal-card{
+  position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1/1.12;
+  box-shadow:var(--shadow-sm);background:#dce8d9;
+}
+.animal-card img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+.animal-card:hover img{transform:scale(1.09)}
+.animal-card b{
+  position:absolute;left:0;right:0;bottom:0;padding:30px 13px 13px;
+  color:#fff;font-size:13px;font-family:'Manrope',sans-serif;font-weight:700;
+  background:linear-gradient(transparent,rgba(6,24,12,.88));
+}
+.other-animals{text-align:center;color:var(--muted);font-size:13px;margin-top:26px}
+
+/* ==========================================================
+   10. HELP BAND
+   ========================================================== */
+.help-band{background:linear-gradient(110deg,#104f28,#18843b);color:#fff;padding:44px 0}
+.help-band-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}
+.help-band h2{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:6px;letter-spacing:-.8px}
+.help-band p:not(.eyebrow){font-size:13.5px;color:#e1f2e4}
+
+/* ==========================================================
+   11. GET INVOLVED
+   ========================================================== */
+.involved-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.involve-card{
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 22px;
+  transition:transform .28s,box-shadow .28s,border-color .28s;
+}
+.involve-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:#cfe4d2}
+.involve-icon{
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  font-size:24px;background:var(--green-soft);margin-bottom:16px;
+}
+.involve-card h3{font-size:16px;font-weight:800;margin-bottom:8px}
+.involve-card p{font-size:13px;color:var(--muted);margin-bottom:16px}
+.involve-card a{
+  font-size:12.5px;font-weight:800;color:var(--green);
+  display:inline-flex;align-items:center;gap:6px;transition:gap .2s;
+}
+.involve-card a:hover{gap:10px}
+
+/* ==========================================================
+   12. STORIES
+   ========================================================== */
+.stories{background:#fbfdfa}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.story-card{
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:26px 24px;transition:transform .28s,box-shadow .28s;
+}
+.story-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.story-quote{font-size:44px;line-height:1;color:#d6ebd9;font-family:Georgia,serif;margin-bottom:6px}
+.story-card p{font-size:13.5px;color:#3d4a41;margin-bottom:18px;font-style:italic}
+.story-person{display:flex;align-items:center;gap:11px}
+.story-avatar{
+  width:40px;height:40px;border-radius:50%;background:var(--green);color:#fff;
+  display:grid;place-items:center;font-weight:800;font-size:14px;flex-shrink:0;
+}
+.story-person b{display:block;font-size:13px}
+.story-person small{font-size:11.5px;color:var(--muted)}
+
+/* ==========================================================
+   13. FAQ
+   ========================================================== */
+.faq-list{max-width:820px;margin:0 auto}
+.faq-item{
+  border:1px solid var(--line);border-radius:14px;margin-bottom:12px;
+  background:#fff;overflow:hidden;transition:border-color .25s,box-shadow .25s;
+}
+.faq-item.open{border-color:#cfe4d2;box-shadow:var(--shadow-sm)}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:18px 22px;background:none;border:0;text-align:left;
+  font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;
+  color:var(--ink);cursor:pointer;
+}
+.faq-icon{
+  font-size:22px;line-height:1;color:var(--green);
+  transition:transform .3s ease;flex-shrink:0;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{padding:0 22px 20px;font-size:13.5px;color:var(--muted)}
+
+/* ==========================================================
+   14. CONTACT
+   ========================================================== */
+.contact{background:linear-gradient(#f4faf2,#ffffff)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:start}
+.contact-info > p:not(.eyebrow){font-size:14px;color:var(--muted);margin-bottom:26px;max-width:440px}
+.contact-list{display:grid;gap:14px;margin-bottom:26px}
+.contact-item{
+  display:flex;align-items:center;gap:14px;background:#fff;
+  border:1px solid var(--line);border-radius:14px;padding:15px 18px;
+  transition:transform .25s,box-shadow .25s;
+}
+.contact-item:hover{transform:translateX(4px);box-shadow:var(--shadow-sm)}
+.contact-item .ci-icon{
+  width:42px;height:42px;border-radius:12px;flex-shrink:0;
+  background:var(--green-soft);color:var(--green);
+  display:grid;place-items:center;font-size:19px;
+}
+.contact-item small{display:block;font-size:11px;color:var(--muted);letter-spacing:.3px}
+.contact-item b{display:block;font-size:15px;font-family:'Manrope',sans-serif}
+.contact-item.helpline b{color:var(--green);font-size:19px}
+
+.contact-form{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:30px 28px;box-shadow:var(--shadow-md);
+}
+.contact-form h3{font-size:19px;font-weight:800;margin-bottom:6px}
+.contact-form > p{font-size:13px;color:var(--muted);margin-bottom:22px}
+.field{margin-bottom:15px}
+.field label{
+  display:block;font-size:12px;font-weight:700;color:#3d4a41;
+  margin-bottom:6px;letter-spacing:.2px;
+}
+.field input,
+.field select,
+.field textarea{
+  width:100%;padding:12px 14px;border:1px solid #dbe6dc;border-radius:10px;
+  font-family:inherit;font-size:14px;color:var(--ink);background:#fbfdfb;
+  transition:border-color .2s,box-shadow .2s;
+}
+.field textarea{resize:vertical;min-height:110px}
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  outline:none;border-color:var(--green);background:#fff;
+  box-shadow:0 0 0 3px rgba(20,122,53,.12);
+}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-note{font-size:11.5px;color:var(--muted);margin-top:12px}
+.form-success{
+  display:none;margin-top:14px;padding:12px 16px;background:#e8f7ec;
+  border:1px solid #b8e3c3;border-radius:10px;color:#0d6b2c;
+  font-size:13px;font-weight:600;
+}
+.form-success.show{display:block}
+
+/* ==========================================================
+   15. FOOTER
+   ========================================================== */
+footer{background:#0c2415;color:#e8f3e9;padding-top:56px}
+.footer-grid{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;
+  gap:38px;padding-bottom:42px;
+}
+.footer-brand .brand-text b{color:#fff}
+.footer-brand .brand-text small{color:#9fb8a5}
+.footer-brand p{font-size:13px;color:#a9c2af;margin-top:16px;max-width:280px}
+.footer-col h4{
+  font-size:13px;font-weight:800;letter-spacing:1.2px;
+  text-transform:uppercase;color:#fff;margin-bottom:16px;
+}
+.footer-col ul{display:grid;gap:10px}
+.footer-col a{font-size:13px;color:#a9c2af;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-helpline{
+  display:inline-flex;align-items:center;gap:8px;background:var(--green);
+  color:#fff;border-radius:10px;padding:11px 16px;font-weight:800;
+  font-size:14px;margin-top:4px;transition:background .2s;
+}
+.footer-helpline:hover{background:#18843b}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.10);padding:18px 0;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;font-size:11.5px;color:#8fae97;
+}
+.footer-bottom a{color:#a9c2af}
+.footer-bottom a:hover{color:#fff}
+
+/* ==========================================================
+   16. POPUP MODAL
+   ========================================================== */
+.popup-backdrop{
+  position:fixed;inset:0;z-index:200;background:rgba(8,24,13,.72);
+  backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;
+  padding:20px;opacity:0;visibility:hidden;
+  transition:opacity .28s ease,visibility .28s ease;
+}
+.popup-backdrop.show{opacity:1;visibility:visible}
+.popup-card{
+  position:relative;width:min(430px,100%);background:#fffaf9;
+  border-radius:22px;text-align:center;padding:32px 26px 24px;
+  box-shadow:var(--shadow-lg);transform:translateY(14px) scale(.98);
+  transition:transform .28s ease;
+}
+.popup-backdrop.show .popup-card{transform:translateY(0) scale(1)}
+.popup-close{
+  position:absolute;right:12px;top:8px;border:0;background:transparent;
+  font-size:26px;line-height:1;color:#59645d;cursor:pointer;
+  padding:4px 8px;border-radius:8px;transition:background .2s;
+}
+.popup-close:hover{background:#f0e6e4}
+.popup-sos{
+  width:76px;height:76px;margin:0 auto 12px;display:grid;place-items:center;
+  border-radius:50%;background:#ffeded;color:#ec1e2b;font-weight:900;
+  font-size:24px;border:7px solid #fff0f0;
+}
+.popup-card .eyebrow{margin-bottom:7px}
+.popup-card h2{font-size:26px;font-weight:800;margin-bottom:9px;letter-spacing:-.6px}
+.popup-card > p:not(.eyebrow){font-size:13px;color:#566158;margin-bottom:4px}
+.popup-card .call-red{margin-top:17px}
+.popup-card small{display:block;margin-top:10px;font-size:11px;color:#6b7570}
+.continue{
+  margin-top:16px;border:0;background:transparent;color:var(--green);
+  font:700 12.5px 'DM Sans',sans-serif;cursor:pointer;padding:6px 10px;border-radius:8px;
+}
+.continue:hover{background:var(--green-soft)}
+
+/* Floating help button */
+.floating-help{
+  position:fixed;right:18px;bottom:18px;z-index:90;border:0;border-radius:999px;
+  background:var(--green);color:#fff;padding:13px 19px;font-weight:800;
+  font-size:13.5px;cursor:pointer;box-shadow:0 10px 28px rgba(13,79,39,.38);
+  display:inline-flex;align-items:center;gap:8px;
+  transition:transform .2s,background .2s;
+}
+.floating-help:hover{transform:translateY(-3px);background:#0f6b2c}
+
+/* ==========================================================
+   17. RESPONSIVE
+   ========================================================== */
+@media (max-width:1024px){
+  .nav nav{gap:14px}
+  .nav nav > a:not(.nav-call){font-size:12px}
+  .hero-help{width:280px}
+  .service-grid{grid-template-columns:repeat(3,1fr);row-gap:16px}
+  .service-item:nth-child(3){border-right:0}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
+  .involved-grid{grid-template-columns:repeat(2,1fr)}
+  .story-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+}
+
+@media (max-width:880px){
+  .menu-toggle{display:block}
+  .nav nav{
+    display:none;position:absolute;top:calc(100% + 1px);left:-20px;right:-20px;
+    background:#fff;box-shadow:0 18px 30px rgba(0,0,0,.14);
+    padding:14px 22px 20px;flex-direction:column;align-items:stretch;
+    gap:0;border-radius:0 0 14px 14px;z-index:70;
+  }
+  .nav nav.open{display:flex}
+  .nav nav > a:not(.nav-call){padding:12px 4px;font-size:14px;border-bottom:1px solid #f0f5f0}
+  .nav nav > a:not(.nav-call)::after{display:none}
+  .nav-call{text-align:center;margin-top:12px;padding:13px 16px;font-size:14px}
+
+  .hero-inner{flex-direction:column;align-items:flex-start;min-height:auto;padding:56px 0 90px;gap:32px}
+  .hero-help{width:100%;max-width:420px}
+  .hero-arrow{display:none}
+  .about-grid{grid-template-columns:1fr;gap:34px}
+  .about-media img{height:320px}
+  .contact-grid{grid-template-columns:1fr;gap:34px}
+  .help-band-inner{flex-direction:column;align-items:flex-start}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:32px}
+}
+
+@media (max-width:640px){
+  .container{width:calc(100% - 30px)}
+  .topbar-inner{justify-content:center;text-align:center;font-size:11px}
+  .topbar .topbar-right{display:none}
+  .nav{min-height:68px}
+  .brand-mark{font-size:28px}
+  .brand-text b{font-size:19px}
+  .brand-text small{font-size:8px}
+
+  .section{padding:52px 0}
+  .hero h1{font-size:clamp(34px,9.5vw,46px);letter-spacing:-1.2px}
+  .hero-text{font-size:13.5px}
+  .hero-actions .btn{width:100%}
+  .hero-inner{padding:44px 0 70px}
+  .hero-dots{bottom:20px}
+
+  .service-grid{grid-template-columns:1fr 1fr;padding:18px 0}
+  .service-item{padding:4px 8px;border-right:0}
+
+  .values-grid{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr}
+  .involved-grid{grid-template-columns:1fr}
+  .animal-grid{grid-template-columns:repeat(2,1fr)}
+  .field-row{grid-template-columns:1fr}
+  .contact-form{padding:24px 20px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .footer-bottom{justify-content:center;text-align:center}
+  .floating-help span{display:none}
+  .floating-help{padding:14px 16px;font-size:18px}
+}
+
+@media (max-width:380px){
+  .hero h1{font-size:32px}
+  .animal-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ================= TOP BAR ================= -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <p>🐾 Care · Rescue · Protect — <b>For All Animals</b></p>
+    <p class="topbar-right">
+      <a href="tel:8437178986">☎ Animal Helpline: <b>8437178986</b></a>
+    </p>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="siteHeader">
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="TJ Foundation home">
+      <span class="brand-mark" aria-hidden="true">🐾</span>
+      <span class="brand-text">
+        <b>TJ Foundation</b>
+        <small>Care · Rescue · Protect</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">☰</button>
+
+    <nav id="mainNav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#work">Our Work</a>
+      <a href="#animals">Animals We Help</a>
+      <a href="#involved">Get Involved</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-call" href="tel:8437178986">☎ Helpline: 8437178986</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero-slides" aria-hidden="true">
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=2000&q=90')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=2000&q=90')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=2000&q=90')"></div>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow light">TJ FOUNDATION</p>
+        <h1>A Safer World<br>For <span>Every Animal</span></h1>
+        <p class="hero-sub">Rescue · Treatment · Care · Awareness</p>
+        <p class="hero-text">
+          We work for the welfare, rescue, treatment and protection of all animals —
+          dogs, cats, cows, birds and every other living being. When an animal is hurt
+          or in distress, kindness and timely care can make all the difference.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-green" href="tel:8437178986">☎ Call Helpline: 8437178986</a>
+          <a class="btn btn-ghost" href="#work">Explore Our Work</a>
+        </div>
+        <p class="hero-note">If you see an injured, sick or distressed animal, please call our helpline immediately.</p>
+      </div>
+
+      <aside class="hero-help" id="heroHelp" aria-label="Animal help helpline">
+        <button class="close-help" id="heroClose" aria-label="Dismiss help card">×</button>
+        <div class="sos-icon" aria-hidden="true">SOS</div>
+        <h2>Need Animal Help?</h2>
+        <p>If you see an injured, sick or distressed animal — any animal — please call our helpline.</p>
+        <a class="call-red" href="tel:8437178986">☎ 8437178986</a>
+        <small>Call now for animal assistance</small>
+      </aside>
+    </div>
+
+    <button class="hero-arrow prev" id="prevSlide" aria-label="Previous background image">‹</button>
+    <button class="hero-arrow next" id="nextSlide" aria-label="Next background image">›</button>
+
+    <div class="hero-dots" id="heroDots" role="tablist" aria-label="Background image selection">
+      <button class="hero-dot active" data-slide="0" aria-label="Image 1"></button>
+      <button class="hero-dot" data-slide="1" aria-label="Image 2"></button>
+      <button class="hero-dot" data-slide="2" aria-label="Image 3"></button>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES STRIP ================= -->
+  <section class="services" aria-label="What we do">
+    <div class="container service-grid">
+      <article class="service-item">
+        <span class="service-icon" aria-hidden="true">🐾</span>
+        <div><b>Rescue</b><p>Emergency help for animals in need</p></div>
+      </article>
+      <article class="service-item">
+        <span class="service-icon" aria-hidden="true">✚</span>
+        <div><b>Medical Treatment</b><p>Timely veterinary care</p></div>
+      </article>
+      <article class="service-item">
+        <span class="service-icon" aria-hidden="true">⌂</span>
+        <div><b>Shelter &amp; Care</b><p>Safe shelter for rescued animals</p></div>
+      </article>
+      <article class="service-item">
+        <span class="service-icon" aria-hidden="true">♥</span>
+        <div><b>Rehabilitation</b><p>Helping animals recover</p></div>
+      </article>
+      <article class="service-item">
+        <span class="service-icon" aria-hidden="true">✦</span>
+        <div><b>Awareness</b><p>Building a kinder society</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-media reveal">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85"
+             alt="Two dogs sitting together outdoors" loading="lazy">
+        <div class="sticker">Every Life<br><b>Matters</b> ♥</div>
+      </div>
+
+      <div class="about-copy reveal">
+        <p class="eyebrow">WHO WE ARE</p>
+        <h2>About <span>TJ Foundation</span></h2>
+        <p>
+          TJ Foundation is dedicated to the welfare of all animals. We aim to rescue, treat,
+          shelter and protect animals in need, regardless of their species. Our mission is to
+          create a kinder, safer and more compassionate world for every living being.
+        </p>
+
+        <div class="values-grid">
+          <article class="value-card">
+            <span class="v-icon" aria-hidden="true">♥</span>
+            <b>Our Mission</b>
+            <p>To rescue, treat and protect all animals in need and give them a better tomorrow.</p>
+          </article>
+          <article class="value-card">
+            <span class="v-icon" aria-hidden="true">◉</span>
+            <b>Our Vision</b>
+            <p>A society where every animal is treated with kindness, respect and care.</p>
+          </article>
+          <article class="value-card">
+            <span class="v-icon" aria-hidden="true">🐾</span>
+            <b>Our Values</b>
+            <p>Compassion, responsibility, integrity and respect for all living beings.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR WORK ================= -->
+  <section class="section work" id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">WHAT WE DO</p>
+        <h2>Our <span>Work</span></h2>
+        <p>From the first rescue call to full recovery, we stay with the animal at every step.</p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card reveal">
+          <div class="work-icon" aria-hidden="true">🚑</div>
+          <h3>Emergency Rescue</h3>
+          <p>Responding to distress calls for injured, sick or trapped animals and getting them to safety quickly.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-icon" aria-hidden="true">🩺</div>
+          <h3>Medical Treatment</h3>
+          <p>Coordinating veterinary care, first aid, sterilisation and vaccination for animals who need it most.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-icon" aria-hidden="true">🏠</div>
+          <h3>Shelter &amp; Rehabilitation</h3>
+          <p>Providing a safe place to rest, heal and recover before animals are reunited or rehomed.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-icon" aria-hidden="true">🍲</div>
+          <h3>Feeding Drives</h3>
+          <p>Regular feeding of community strays and animals in areas where food and water are scarce.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-icon" aria-hidden="true">📢</div>
+          <h3>Awareness &amp; Education</h3>
+          <p>Working with communities and schools to spread kindness, empathy and responsible animal care.</p>
+        </article>
+        <article class="work-card reveal">
+          <div class="work-icon" aria-hidden="true">🤝</div>
+          <h3>Adoption Support</h3>
+          <p>Helping rescued animals find loving, responsible homes through our adoption network.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats" aria-label="Our impact">
+    <div class="container stats-grid">
+      <div class="stat"><b class="counter" data-target="1200" data-suffix="+">0</b><span>Animals Helped</span></div>
+      <div class="stat"><b class="counter" data-target="850" data-suffix="+">0</b><span>Rescue Calls Answered</span></div>
+      <div class="stat"><b class="counter" data-target="300" data-suffix="+">0</b><span>Adoptions Supported</span></div>
+      <div class="stat"><b class="counter" data-target="24" data-suffix="x7">0</b><span>Helpline Availability</span></div>
+    </div>
+  </section>
+
+  <!-- ================= ANIMALS ================= -->
+  <section class="section animals" id="animals">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">ONE WORLD, MANY LIVES</p>
+        <h2>We Help <span>All Animals</span></h2>
+        <p>Our work is not limited to dogs and cats. Every species deserves care and compassion.</p>
+      </div>
+
+      <div class="animal-grid">
+        <article class="animal-card reveal">
+          <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80" alt="Dog" loading="lazy">
+          <b>Dogs</b>
+        </article>
+        <article class="animal-card reveal">
+          <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Cat" loading="lazy">
+          <b>Cats</b>
+        </article>
+        <article class="animal-card reveal">
+          <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=600&q=80" alt="Cow" loading="lazy">
+          <b>Cows &amp; Calves</b>
+        </article>
+        <article class="animal-card reveal">
+          <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=600&q=80" alt="Bird" loading="lazy">
+          <b>Birds</b>
+        </article>
+        <article class="animal-card reveal">
+          <img src="https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=600&q=80" alt="Goat" loading="lazy">
+          <b>Goats &amp; Sheep</b>
+        </article>
+        <article class="animal-card reveal">
+          <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=600&q=80" alt="Horse" loading="lazy">
+          <b>Horses</b>
+        </article>
+        <article class="animal-card reveal">
+          <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=600&q=80" alt="Rabbit" loading="lazy">
+          <b>Rabbits</b>
+        </article>
+      </div>
+
+      <p class="other-animals">And all other animals in need — wildlife, strays and helpless living beings.</p>
+    </div>
+  </section>
+
+  <!-- ================= HELP BAND ================= -->
+  <section class="help-band">
+    <div class="container help-band-inner">
+      <div>
+        <p class="eyebrow light">SEE AN ANIMAL IN DISTRESS?</p>
+        <h2>Every second can matter.</h2>
+        <p>Call our helpline and share the animal’s location and condition.</p>
+      </div>
+      <a class="btn btn-white" href="tel:8437178986">☎ 8437178986</a>
+    </div>
+  </section>
+
+  <!-- ================= GET INVOLVED ================= -->
+  <section class="section" id="involved">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">JOIN THE CAUSE</p>
+        <h2>Get <span>Involved</span></h2>
+        <p>You don’t need a big platform to make a difference — small actions save lives every day.</p>
+      </div>
+
+      <div class="involved-grid">
+        <article class="involve-card reveal">
+          <div class="involve-icon" aria-hidden="true">❤️</div>
+          <h3>Volunteer</h3>
+          <p>Join rescue drives, feeding rounds and awareness campaigns in your area.</p>
+          <a href="#contact">Become a volunteer →</a>
+        </article>
+        <article class="involve-card reveal">
+          <div class="involve-icon" aria-hidden="true">🎁</div>
+          <h3>Donate</h3>
+          <p>Support food, medicine and shelter for rescued animals who need it most.</p>
+          <a href="#contact">Support our work →</a>
+        </article>
+        <article class="involve-card reveal">
+          <div class="involve-icon" aria-hidden="true">🏡</div>
+          <h3>Adopt</h3>
+          <p>Give a rescued animal a forever home full of love and safety.</p>
+          <a href="#contact">Start adoption →</a>
+        </article>
+        <article class="involve-card reveal">
+          <div class="involve-icon" aria-hidden="true">📣</div>
+          <h3>Spread the Word</h3>
+          <p>Share our helpline so more people know who to call in an emergency.</p>
+          <a href="tel:8437178986">Share helpline →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STORIES ================= -->
+  <section class="section stories">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">STORIES OF HOPE</p>
+        <h2>Lives We’ve <span>Touched</span></h2>
+        <p>Real moments of kindness that remind us why this work matters.</p>
+      </div>
+
+      <div class="story-grid">
+        <article class="story-card reveal">
+          <div class="story-quote" aria-hidden="true">“</div>
+          <p>A small puppy was found injured near the highway. We called the helpline and the team guided us until help arrived. Today he is healthy and loved.</p>
+          <div class="story-person">
+            <span class="story-avatar">A</span>
+            <div><b>Aman S.</b><small>Animal rescuer</small></div>
+          </div>
+        </article>
+        <article class="story-card reveal">
+          <div class="story-quote" aria-hidden="true">“</div>
+          <p>The awareness session at our school changed how children look at stray animals. They now keep water bowls outside their homes.</p>
+          <div class="story-person">
+            <span class="story-avatar">P</span>
+            <div><b>Priya M.</b><small>Teacher</small></div>
+          </div>
+        </article>
+        <article class="story-card reveal">
+          <div class="story-quote" aria-hidden="true">“</div>
+          <p>A cow had collapsed on the road. One call and the team reached within minutes. It’s reassuring to know someone actually responds.</p>
+          <div class="story-person">
+            <span class="story-avatar">R</span>
+            <div><b>Rohit K.</b><small>Local resident</small></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">QUESTIONS</p>
+        <h2>Frequently <span>Asked</span></h2>
+        <p>Quick answers about our helpline and how you can help.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>What should I do if I find an injured animal?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Stay calm and keep a safe distance. Note the exact location and the animal’s condition, then call our helpline at 8437178986 immediately. Do not try to move a seriously injured animal unless it is in immediate danger.</p></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>Is the helpline available 24x7?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Our helpline aims to stay reachable at all times. If your call is not answered instantly, please call again or send a message with the location and details so the team can respond.</p></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>Do you help animals other than dogs and cats?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Yes. TJ Foundation works for all animals — cows, calves, birds, goats, sheep, horses, rabbits, wildlife and any other living being in distress.</p></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>How can I volunteer or support the foundation?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>You can volunteer for rescue and feeding drives, donate supplies or funds, adopt a rescued animal, or simply share our helpline number with people around you. Fill out the contact form and we’ll get back to you.</p></div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can I report an animal emergency on someone else’s behalf?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Absolutely. Anyone can report an animal in distress. Please share accurate location details and, if possible, stay nearby until help arrives.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h2>Contact <span>TJ Foundation</span></h2>
+        <p>For animal assistance or to learn more about our work, please reach out to our helpline. In an emergency, calling is always faster than writing.</p>
+
+        <div class="contact-list">
+          <a class="contact-item helpline" href="tel:8437178986">
+            <span class="ci-icon" aria-hidden="true">☎</span>
+            <div><small>Animal Help Helpline</small><b>8437178986</b></div>
+          </a>
+          <a class="contact-item" href="mailto:help@tjfoundation.org">
+            <span class="ci-icon" aria-hidden="true">✉</span>
+            <div><small>Email</small><b>help@tjfoundation.org</b></div>
+          </a>
+          <div class="contact-item">
+            <span class="ci-icon" aria-hidden="true">📍</span>
+            <div><small>Service Area</small><b>Local &amp; Nearby Regions</b></div>
+          </div>
+        </div>
+
+        <a class="btn btn-green" href="tel:8437178986">☎ Call Helpline Now</a>
+      </div>
+
+      <div class="contact-form reveal">
+        <h3>Send us a message</h3>
+        <p>Report an animal in need or ask how you can help.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Full name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="10-digit number" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email (optional)</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+
+          <div class="field">
+            <label for="subject">I am contacting about</label>
+            <select id="subject" name="subject">
+              <option>Animal emergency</option>
+              <option>Volunteering</option>
+              <option>Donation</option>
+              <option>Adoption</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Describe the situation, location and animal condition…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-green btn-block">Send Message</button>
+          <p class="form-note">For urgent animal emergencies, please call <a href="tel:8437178986"><b>8437178986</b></a> directly.</p>
+          <div class="form-success" id="formSuccess" role="status">
+            ✅ Thank you! Your message has been recorded. For emergencies, please call 8437178986.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <span class="brand-mark" aria-hidden="true">🐾</span>
+          <span class="brand-text">
+            <b>TJ Foundation</b>
+            <small>Care · Rescue · Protect</small>
+          </span>
+        </a>
+        <p>Compassion for every paw, hoof, wing and life. Working for the rescue, treatment and protection of all animals.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#animals">Animals We Help</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#involved">Get Involved</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="tel:8437178986">Report an Emergency</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Animal Helpline</h4>
+        <p style="font-size:13px;color:#a9c2af;margin-bottom:14px;">Injured, sick or distressed animal? Call us right away.</p>
+        <a class="footer-helpline" href="tel:8437178986">☎ 8437178986</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year">2025</span> TJ Foundation. All rights reserved.</p>
+      <p>Made with ♥ for all animals.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= POPUP ================= -->
+<div class="popup-backdrop" id="helpPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup-card">
+    <button class="popup-close" id="popupClose" aria-label="Close popup">×</button>
+    <div class="popup-sos" aria-hidden="true">SOS</div>
+    <p class="eyebrow">ANIMAL EMERGENCY HELPLINE</p>
+    <h2 id="popupTitle">Need Animal Help?</h2>
+    <p>If you see an injured, sick or distressed animal — dog, cat, cow, bird or any other animal — please call our helpline.</p>
+    <a class="call-red" href="tel:8437178986">☎ 8437178986</a>
+    <small>When calling, share the animal’s location and condition.</small>
+    <button class="continue" id="continueBtn">
+
+      Continue browsing
+    </button>
+  </div>
+</div>
+
+<!-- Floating emergency help button -->
+<button class="floating-help" id="floatingHelp" type="button" aria-label="Open animal emergency helpline">
+  <span>Animal Help</span> 🐾
+</button>
+
+<script>
+(function () {
+  "use strict";
+
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+  // Current year
+  const year = $("#year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  // Sticky header shadow
+  const header = $("#siteHeader");
+  const updateHeader = () => {
+    if (header) header.classList.toggle("scrolled", window.scrollY > 10);
+  };
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+
+  // Mobile navigation
+  const menuToggle = $("#menuToggle");
+  const mainNav = $("#mainNav");
+
+  function closeMenu() {
+    if (!menuToggle || !mainNav) return;
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  }
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+    $$("a", mainNav).forEach(link => link.addEventListener("click", closeMenu));
+    document.addEventListener("click", event => {
+      if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 880) closeMenu();
+    });
+  }
+
+  // Hero background slider
+  const slides = $$(".hero-slide");
+  const dots = $$(".hero-dot");
+  let currentSlide = 0;
+  let sliderTimer;
+
+  function showSlide(index) {
+    if (!slides.length) return;
+    currentSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === currentSlide));
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentSlide);
+      dot.setAttribute("aria-selected", String(i === currentSlide));
+      dot.setAttribute("tabindex", i === currentSlide ? "0" : "-1");
+    });
+  }
+
+  function startSlider() {
+    window.clearInterval(sliderTimer);
+    if (slides.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      sliderTimer = window.setInterval(() => showSlide(currentSlide + 1), 6000);
+    }
+  }
+
+  $("#prevSlide")?.addEventListener("click", () => {
+    showSlide(currentSlide - 1);
+    startSlider();
+  });
+  $("#nextSlide")?.addEventListener("click", () => {
+    showSlide(currentSlide + 1);
+    startSlider();
+  });
+  dots.forEach((dot, i) => dot.addEventListener("click", () => {
+    showSlide(i);
+    startSlider();
+  }));
+  showSlide(0);
+  startSlider();
+
+  // Dismiss the hero SOS card
+  $("#heroClose")?.addEventListener("click", () => {
+    const card = $("#heroHelp");
+    if (card) card.hidden = true;
+  });
+
+  // Emergency popup
+  const popup = $("#helpPopup");
+  const popupClose = $("#popupClose");
+  const continueBtn = $("#continueBtn");
+  let previousFocus = null;
+
+  function openPopup() {
+    if (!popup) return;
+    previousFocus = document.activeElement;
+    popup.classList.add("show");
+    document.body.style.overflow = "hidden";
+    popupClose?.focus();
+  }
+
+  function closePopup() {
+    if (!popup) return;
+    popup.classList.remove("show");
+    document.body.style.overflow = "";
+    if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus();
+  }
+
+  $("#floatingHelp")?.addEventListener("click", openPopup);
+  popupClose?.addEventListener("click", closePopup);
+  continueBtn?.addEventListener("click", closePopup);
+  popup?.addEventListener("click", event => {
+    if (event.target === popup) closePopup();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && popup?.classList.contains("show")) closePopup();
+  });
+
+  // Show popup once per browser tab after a short delay.
+  // It does not block the page if the visitor has already dismissed it.
+  try {
+    if (popup && !sessionStorage.getItem("tjHelpPopupDismissed")) {
+      window.setTimeout(() => {
+        if (!popup.classList.contains("show")) openPopup();
+      }, 9000);
+    }
+    function rememberPopupDismissal() {
+      try { sessionStorage.setItem("tjHelpPopupDismissed", "1"); } catch (_) {}
+    }
+    popupClose?.addEventListener("click", rememberPopupDismissal);
+    continueBtn?.addEventListener("click", rememberPopupDismissal);
+  } catch (_) {
+    // Storage may be unavailable; the popup can still be opened manually.
+  }
+
+  // FAQ accordion
+  $$(".faq-q").forEach(button => {
+    button.addEventListener("click", () => {
+      const item = button.closest(".faq-item");
+      const answer = item?.querySelector(".faq-a");
+      const isOpen = item?.classList.contains("open");
+
+      // Close all items first
+      $$(".faq-item").forEach(other => {
+        other.classList.remove("open");
+        const q = $(".faq-q", other);
+        const a = $(".faq-a", other);
+        if (q) q.setAttribute("aria-expanded", "false");
+        if (a) a.style.maxHeight = null;
+      });
+
+      if (item && answer && !isOpen) {
+        item.classList.add("open");
+        button.setAttribute("aria-expanded", "true");
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+
+  // Reveal sections as they enter the viewport
+  const revealItems = $$(".reveal");
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach(item => revealObserver.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add("visible"));
+  }
+
+  // Animate impact counters once
+  const counters = $$(".counter");
+  function animateCounter(counter) {
+    const target = Number(counter.dataset.target || 0);
+    const suffix = counter.dataset.suffix || "";
+    const duration = 1400;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = Math.round(target * eased).toLocaleString("en-IN") + (progress === 1 ? suffix : "");
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if ("IntersectionObserver" in window) {
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(counter => counterObserver.observe(counter));
+  } else {
+    counters.forEach(counter => {
+      counter.textContent = Number(counter.dataset.target || 0).toLocaleString("en-IN") +
+        (counter.dataset.suffix || "");
+    });
+  }
+
+  // Highlight the navigation link for the visible section
+  const navLinks = $$("#mainNav a[href^='#']:not(.nav-call)");
+  const sections = navLinks.map(link => $(link.getAttribute("href"))).filter(Boolean);
+  if ("IntersectionObserver" in window && sections.length) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            const active = link.getAttribute("href") === "#" + entry.target.id;
+            link.classList.toggle("active", active);
+            if (active) link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+          });
+        }
+      });
+    }, { rootMargin: "-25% 0px -65% 0px" });
+    sections.forEach(section => sectionObserver.observe(section));
+  }
+
+  // Contact form: front-end validation and email hand-off.
+  // Static HTML cannot deliver/store a message on its own; this opens the visitor's email app.
+  const contactForm = $("#contactForm");
+  const formSuccess = $("#formSuccess");
+  if (contactForm) {
+    contactForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      const name = String(formData.get("name") || "").trim();
+      const phone = String(formData.get("phone") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const subject = String(formData.get("subject") || "General enquiry").trim();
+      const message = String(formData.get("message") || "").trim();
+
+      if (!name || !phone || !message) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      const emailSubject = encodeURIComponent("TJ Foundation website: " + subject);
+      const emailBody = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Email: " + (email || "Not provided") + "\n" +
+        "Enquiry: " + subject + "\n\n" +
+        "Message:\n" + message
+      );
+
+      if (formSuccess) {
+        formSuccess.textContent = "Your email app should open with your message prepared. Please send the email to complete your enquiry.";
+        formSuccess.classList.add("show");
+      }
+
+      window.location.href = "mailto:help@tjfoundation.org?subject=" + emailSubject + "&body=" + emailBody;
+    });
+  }
+})();
+</script>
+</body>
+</html>
